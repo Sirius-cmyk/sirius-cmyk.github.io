@@ -1,35 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>你好</title>
-    <url>/myselfblog/2023/04/18/test/</url>
-    <content><![CDATA[<div class="note icon-padding simple"><i class="note-icon fab fa-cc-visa"></i><p>你是刷 Visa 还是 UnionPay</p>
-</div>
-<div class="note blue icon-padding modern"><i class="note-icon fas fa-bullhorn"></i><p>2021年快到了….</p>
-</div>
-<div class="note pink icon-padding flat"><i class="note-icon fas fa-car-crash"></i><p>小心开车 安全至上</p>
-</div>
-<div class="note red icon-padding disabled"><i class="note-icon fas fa-fan"></i><p>这是三片呢？还是四片？</p>
-</div>
-<div class="note orange icon-padding simple"><i class="note-icon fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p>
-</div>
-<div class="note purple icon-padding simple"><i class="note-icon far fa-hand-scissors"></i><p>剪刀石头布</p>
-</div>
-<div class="note green icon-padding simple"><i class="note-icon fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p>
-</div>
-
-
-
-]]></content>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/myselfblog/2023/04/14/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content><![CDATA[<p>下方是分隔符</p>
+<hr>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<hr>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
@@ -48,17 +27,48 @@
       </tags>
   </entry>
   <entry>
-    <title>测试</title>
-    <url>/myselfblog/2023/04/18/test1/</url>
-    <content><![CDATA[<p>naoiherfoahof<br>发i噢俄红粉乌黑进去哦</p>
+    <title>a测试</title>
+    <url>/myselfblog/2023/04/18/test/</url>
+    <content><![CDATA[<div class="note icon-padding simple"><i class="note-icon fab fa-cc-visa"></i><p>你是刷 Visa 还是 UnionPay</p>
+</div>
+
+<p>下方是分隔符</p>
 <hr>
-<p>aohdohaof</p>
+<div class="note blue icon-padding modern"><i class="note-icon fas fa-bullhorn"></i><p>2021年快到了….</p>
+</div>
+<div class="note pink icon-padding flat"><i class="note-icon fas fa-car-crash"></i><p>小心开车 安全至上</p>
+</div>
+<div class="note red icon-padding disabled"><i class="note-icon fas fa-fan"></i><p>这是三片呢？还是四片？</p>
+</div>
+<div class="note orange icon-padding simple"><i class="note-icon fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p>
+</div>
+<div class="note purple icon-padding simple"><i class="note-icon far fa-hand-scissors"></i><p>剪刀石头布</p>
+</div>
+<div class="note green icon-padding simple"><i class="note-icon fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p>
+</div>
+
+
+
 ]]></content>
       <categories>
-        <category>呵呵</category>
+        <category>a测试</category>
       </categories>
       <tags>
-        <tag>no 问题</tag>
+        <tag>a测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>b测试</title>
+    <url>/myselfblog/2023/04/18/test1/</url>
+    <content><![CDATA[<p>aofieoasvjmporitgjspoijre<br>ampwoefjpajefpa;mfpewmfpoawjke<br>下方是分隔符</p>
+<hr>
+<p>afjpwefjpawkjepfoakwpeofkaeweafaefawe<br>afweffvsertgsgbsfbrtbstreserg<br>sergsaregwrgsjpbospr,pgwskerpo</p>
+]]></content>
+      <categories>
+        <category>b测试</category>
+      </categories>
+      <tags>
+        <tag>b测试</tag>
       </tags>
   </entry>
 </search>
