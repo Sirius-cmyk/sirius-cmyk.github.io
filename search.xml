@@ -26,6 +26,8 @@
     <content><![CDATA[<p>下方是分隔符</p>
 <hr>
 <hr>
+<img src="/myselfblog/2023/04/14/hello-world/test-img.jpg" class title="testimg">
+
 <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -76,6 +78,30 @@
 
 <p>Nginx重启命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>Firewall</title>
+    <url>/myselfblog/2023/04/21/%E9%98%B2%E7%81%AB%E5%A2%99%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>查看防火墙状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+
+<p>防火墙添加端口</p>
+<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<p>重启防火墙（重启载入，更新配置）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>查询某个端口是否开放</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
+
+<p>查询已经开放的端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
+
+<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
   </entry>
   <entry>
@@ -145,30 +171,6 @@
 
 <p>查看当前目录</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>Firewall</title>
-    <url>/myselfblog/2023/04/21/%E9%98%B2%E7%81%AB%E5%A2%99%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>查看防火墙状态</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
-
-<p>防火墙添加端口</p>
-<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
-
-<p>重启防火墙（重启载入，更新配置）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<p>查询某个端口是否开放</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
-
-<p>查询已经开放的端口</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
-
-<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
-
 ]]></content>
   </entry>
 </search>
