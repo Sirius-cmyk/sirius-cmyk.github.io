@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux Shell命令</title>
+    <url>/myselfblog/2023/04/21/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>查看IP地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+
+<p>查看nginx进程</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps -ef | grep nginx</span><br></pre></td></tr></table></figure>
+
+<p>查看所有进程</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps -elf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps</span><br></pre></td></tr></table></figure>
+
+<p>删除进程</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure>
+
+<p>删除文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -r xxx.xx</span><br></pre></td></tr></table></figure>
+
+<p>删除文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rmdir xxx.xx</span><br></pre></td></tr></table></figure>
+
+<p>建立文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir xxx.xx</span><br></pre></td></tr></table></figure>
+
+<p>文件改名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mv vvv.vv xxx.xx</span><br></pre></td></tr></table></figure>
+
+<p>移动文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mv vvv.vv xxx.xx/</span><br></pre></td></tr></table></figure>
+
+<p>解压tar.gz</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zxvf xxx.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>解压zip文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">unzip xxx.zip</span><br></pre></td></tr></table></figure>
+
+<p>文件内容查看</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat xxx.xx</span><br></pre></td></tr></table></figure>
+
+<p>查找文件位置</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find -name xxx.conf</span><br></pre></td></tr></table></figure>
+
+<p>程序转到后台运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bg</span><br></pre></td></tr></table></figure>
+
+<p>将运行程序转为前台</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fg</span><br></pre></td></tr></table></figure>
+
+<p>查看端口占用进程</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:8000</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netstat -tunlp | grep 8000</span><br></pre></td></tr></table></figure>
+
+<p>查看所有端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netstat -anp</span><br></pre></td></tr></table></figure>
+
+<p>网络请求命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl http://192.168.1.197:8000</span><br></pre></td></tr></table></figure>
+
+<p>查看当前目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>GIT命令</title>
     <url>/myselfblog/2023/04/21/git/</url>
     <content><![CDATA[<p>克隆仓库会在执行命令文件夹下新建仓库文件夹</p>
@@ -102,75 +171,6 @@
 <p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
 
-]]></content>
-  </entry>
-  <entry>
-    <title>Linux Shell命令</title>
-    <url>/myselfblog/2023/04/21/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p>查看IP地址</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ip addr</span><br></pre></td></tr></table></figure>
-
-<p>查看nginx进程</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps -ef | grep nginx</span><br></pre></td></tr></table></figure>
-
-<p>查看所有进程</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps -elf</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">top</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ps</span><br></pre></td></tr></table></figure>
-
-<p>删除进程</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure>
-
-<p>删除文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm -r xxx.xx</span><br></pre></td></tr></table></figure>
-
-<p>删除文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rmdir xxx.xx</span><br></pre></td></tr></table></figure>
-
-<p>建立文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir xxx.xx</span><br></pre></td></tr></table></figure>
-
-<p>文件改名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mv vvv.vv xxx.xx</span><br></pre></td></tr></table></figure>
-
-<p>移动文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mv vvv.vv xxx.xx/</span><br></pre></td></tr></table></figure>
-
-<p>解压tar.gz</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zxvf xxx.tar.gz</span><br></pre></td></tr></table></figure>
-
-<p>解压zip文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">unzip xxx.zip</span><br></pre></td></tr></table></figure>
-
-<p>文件内容查看</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat xxx.xx</span><br></pre></td></tr></table></figure>
-
-<p>查找文件位置</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">find -name xxx.conf</span><br></pre></td></tr></table></figure>
-
-<p>程序转到后台运行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bg</span><br></pre></td></tr></table></figure>
-
-<p>将运行程序转为前台</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fg</span><br></pre></td></tr></table></figure>
-
-<p>查看端口占用进程</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:8000</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netstat -tunlp | grep 8000</span><br></pre></td></tr></table></figure>
-
-<p>查看所有端口</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">netstat -anp</span><br></pre></td></tr></table></figure>
-
-<p>网络请求命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl http://192.168.1.197:8000</span><br></pre></td></tr></table></figure>
-
-<p>查看当前目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
 </search>
