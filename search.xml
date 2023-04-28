@@ -68,26 +68,13 @@
 <p>查看当前目录</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>GIT命令</title>
-    <url>/myselfblog/2023/04/21/git/</url>
-    <content><![CDATA[<p>克隆仓库会在执行命令文件夹下新建仓库文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:用户名/仓库名.git</span><br></pre></td></tr></table></figure>
-
-<p>仓库提交命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;操作目的&quot;</span><br><span class="line">git push origin（本地分支） 仓库分支</span><br></pre></td></tr></table></figure>
-
-<p>仓库ssh生成命令，生成后在c/Usr/用户名/.ssh/id_rsa.pub文件中</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen –t rsa –C &quot;git仓库邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-<p>配置仓库本地用户名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;git用户名&quot;</span><br></pre></td></tr></table></figure>
-
-<p>配置仓库本地邮箱</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;git登录邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-]]></content>
+      <categories>
+        <category>Linux命令</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>学习</tag>
+      </tags>
   </entry>
   <entry>
     <title>Linux 防火墙命令</title>
@@ -112,6 +99,40 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Linux命令</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GIT命令</title>
+    <url>/myselfblog/2023/04/21/git/</url>
+    <content><![CDATA[<p>克隆仓库会在执行命令文件夹下新建仓库文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:用户名/仓库名.git</span><br></pre></td></tr></table></figure>
+
+<p>仓库提交命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;操作目的&quot;</span><br><span class="line">git push origin（本地分支） 仓库分支</span><br></pre></td></tr></table></figure>
+
+<p>仓库ssh生成命令，生成后在c/Usr/用户名/.ssh/id_rsa.pub文件中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen –t rsa –C &quot;git仓库邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>配置仓库本地用户名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;git用户名&quot;</span><br></pre></td></tr></table></figure>
+
+<p>配置仓库本地邮箱</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;git登录邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>git命令</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>仓库</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -136,10 +157,10 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
       <categories>
-        <category>你好</category>
+        <category>test</category>
       </categories>
       <tags>
-        <tag>Hello-world</tag>
+        <tag>test</tag>
       </tags>
   </entry>
   <entry>
@@ -191,7 +212,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>软件</category>
+        <category>软件工具</category>
       </categories>
       <tags>
         <tag>工具</tag>
@@ -227,5 +248,12 @@
 <p>Nginx重启命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>Linux命令</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>学习</tag>
+      </tags>
   </entry>
 </search>
