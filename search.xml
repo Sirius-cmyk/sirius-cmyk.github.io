@@ -1,64 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Linux 防火墙命令</title>
-    <url>/myselfblog/2023/04/21/firewall/</url>
-    <content><![CDATA[<p>查看防火墙状态</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
-
-<p>防火墙添加端口</p>
-<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
-
-<p>重启防火墙（重启载入，更新配置）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<p>查询某个端口是否开放</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
-
-<p>查询已经开放的端口</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
-
-<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux命令</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GIT命令</title>
-    <url>/myselfblog/2023/04/21/git/</url>
-    <content><![CDATA[<p>克隆仓库会在执行命令文件夹下新建仓库文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:用户名/仓库名.git</span><br></pre></td></tr></table></figure>
-
-<p>仓库提交命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;操作目的&quot;</span><br><span class="line">git push origin（本地分支） 仓库分支</span><br></pre></td></tr></table></figure>
-
-<p>仓库ssh生成命令，生成后在c/Usr/用户名/.ssh/id_rsa.pub文件中</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen –t rsa –C &quot;git仓库邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-<p>配置仓库本地用户名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;git用户名&quot;</span><br></pre></td></tr></table></figure>
-
-<p>配置仓库本地邮箱</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;git登录邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>git命令</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
-        <tag>仓库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux Shell命令</title>
     <url>/myselfblog/2023/04/21/Shell/</url>
     <content><![CDATA[<p>查看IP地址</p>
@@ -135,6 +77,92 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux 防火墙命令</title>
+    <url>/myselfblog/2023/04/21/firewall/</url>
+    <content><![CDATA[<p>查看防火墙状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+
+<p>防火墙添加端口</p>
+<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<p>重启防火墙（重启载入，更新配置）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>查询某个端口是否开放</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
+
+<p>查询已经开放的端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
+
+<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux命令</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GIT命令</title>
+    <url>/myselfblog/2023/04/21/git/</url>
+    <content><![CDATA[<p>克隆仓库会在执行命令文件夹下新建仓库文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:用户名/仓库名.git</span><br></pre></td></tr></table></figure>
+
+<p>仓库提交命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;操作目的&quot;</span><br><span class="line">git push origin（本地分支） 仓库分支</span><br></pre></td></tr></table></figure>
+
+<p>仓库ssh生成命令，生成后在c/Usr/用户名/.ssh/id_rsa.pub文件中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen –t rsa –C &quot;git仓库邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>配置仓库本地用户名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;git用户名&quot;</span><br></pre></td></tr></table></figure>
+
+<p>配置仓库本地邮箱</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;git登录邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>git命令</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>仓库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/myselfblog/2023/04/14/hello-world/</url>
+    <content><![CDATA[<p>下方是分隔符</p>
+<hr>
+<img src="/myselfblog/2023/04/14/hello-world/test-img.jpg" class title="testimg">
+
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx</title>
     <url>/myselfblog/2023/04/21/nginx/</url>
     <content><![CDATA[<p>Nginx是一个高性能的Http和反向代理服务器，处理高并发能力强，占用内存少 有以下3点作用 </p>
@@ -170,34 +198,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/myselfblog/2023/04/14/hello-world/</url>
-    <content><![CDATA[<p>下方是分隔符</p>
-<hr>
-<img src="/myselfblog/2023/04/14/hello-world/test-img.jpg" class title="testimg">
-
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>test</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
       </tags>
   </entry>
   <entry>
