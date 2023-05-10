@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Linux 防火墙命令</title>
-    <url>/2023/04/21/firewall/</url>
-    <content><![CDATA[<p>查看防火墙状态</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
-
-<p>防火墙添加端口</p>
-<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
-
-<p>重启防火墙（重启载入，更新配置）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<p>查询某个端口是否开放</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
-
-<p>查询已经开放的端口</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
-
-<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux命令</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux Shell命令</title>
     <url>/2023/04/21/Shell/</url>
     <content><![CDATA[<p>查看IP地址</p>
@@ -131,7 +100,38 @@
       </categories>
       <tags>
         <tag>学习</tag>
-        <tag>仓库</tag>
+        <tag>数仓</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux 防火墙命令</title>
+    <url>/2023/04/21/firewall/</url>
+    <content><![CDATA[<p>查看防火墙状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+
+<p>防火墙添加端口</p>
+<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<p>重启防火墙（重启载入，更新配置）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>查询某个端口是否开放</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
+
+<p>查询已经开放的端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
+
+<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux命令</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>学习</tag>
       </tags>
   </entry>
   <entry>
@@ -261,10 +261,10 @@
     <content><![CDATA[<p>文章原本内容可跳转至<a href="https://blog.csdn.net/SUUFBK/article/details/124467147?spm=1001.2014.3001.5501">此文章</a>，本章节仅为内容复用。</p>
 <h1 id="文章简介"><a href="#文章简介" class="headerlink" title="文章简介"></a>文章简介</h1><p>本文章记录本人在使用Bizhub C221打印机扫描功能时，为了在笔记本电脑上获取打印机扫描成功的电子版图片，对笔记本电脑与打印机进行操作的过程以及部分参考资料与经验。</p>
 <h1 id="笔记本准备"><a href="#笔记本准备" class="headerlink" title="笔记本准备"></a>笔记本准备</h1><h2 id="关于打印机驱动"><a href="#关于打印机驱动" class="headerlink" title="关于打印机驱动"></a>关于打印机驱动</h2><p>因为这个打印机很久以前我就装过去驱动了，驱动文件早就没得咯，现在找到一个官方的<a href="https://www.konicaminolta.com.cn/support/drivers/index.html">驱动下载网页</a>(点击跳转)，供大家参考。同时本人在操作过程中未产生驱动相关的问题，因此并不确定打印机的扫描连接功能是否与此驱动有关，还请各位谅解。</p>
-<h2 id="创建存储文件夹并设置共享-1"><a href="#创建存储文件夹并设置共享-1" class="headerlink" title="创建存储文件夹并设置共享[^1]"></a>创建存储文件夹并设置共享[^1]</h2><p>在D盘创建一个名为SCAN的文件夹（对于文件夹位置不是刚性要求，如果创建在C盘或桌面，在重装系统后，文件夹会被删除。除此之外其他操作不受文件夹位置影响）。创建之后右键点击文件夹，点击属性，点击共享。<br><img src="https://img-blog.csdnimg.cn/07faa17eb79246e3ac81335593c91247.png#pic_center"><br><img src="https://img-blog.csdnimg.cn/c2d3d53231704bd1990e40de72a1488e.png#pic_center"><br>在弹出框中点击下拉框（输入框右侧小三角），在下拉列表中选择Everyone，随后点击下拉框右侧的添加按钮。<br><img src="https://img-blog.csdnimg.cn/9ac04045c4b246b18a26d237ff537e18.png#pic_center"><br>点击后可看到下拉框下方多出一行，在Everyone那一行右侧，点击读取，修改为读取/写入，随后点击右下角共享按钮。至此文件夹共享设置完成。<br><img src="https://img-blog.csdnimg.cn/00ff5071ef574161827659d11d88502e.png#pic_center"><br>[^1]:<a href="https://www.gzkmbg.com/h-nd-122.html">笔记本文件、网络及打印机设置参考</a></p>
+<h2 id="创建存储文件夹并设置共享"><a href="#创建存储文件夹并设置共享" class="headerlink" title="创建存储文件夹并设置共享"></a>创建存储文件夹并设置共享</h2><p><a href="https://www.gzkmbg.com/h-nd-122.html">笔记本文件、网络及打印机设置参考</a><br>在D盘创建一个名为SCAN的文件夹（对于文件夹位置不是刚性要求，如果创建在C盘或桌面，在重装系统后，文件夹会被删除。除此之外其他操作不受文件夹位置影响）。创建之后右键点击文件夹，点击属性，点击共享。<br><img src="https://img-blog.csdnimg.cn/07faa17eb79246e3ac81335593c91247.png#pic_center"><br><img src="https://img-blog.csdnimg.cn/c2d3d53231704bd1990e40de72a1488e.png#pic_center"><br>在弹出框中点击下拉框（输入框右侧小三角），在下拉列表中选择Everyone，随后点击下拉框右侧的添加按钮。<br><img src="https://img-blog.csdnimg.cn/9ac04045c4b246b18a26d237ff537e18.png#pic_center"><br>点击后可看到下拉框下方多出一行，在Everyone那一行右侧，点击读取，修改为读取/写入，随后点击右下角共享按钮。至此文件夹共享设置完成。<br><img src="https://img-blog.csdnimg.cn/00ff5071ef574161827659d11d88502e.png#pic_center"></p>
 <h2 id="设置笔记本网络共享"><a href="#设置笔记本网络共享" class="headerlink" title="设置笔记本网络共享"></a>设置笔记本网络共享</h2><p>在上一步完成后返回到SCAN文件属性/共享弹出框，点击下方网络和共享中心。<br><img src="https://img-blog.csdnimg.cn/0ea6156b3ff241c8b4bc57b959f35944.png#pic_center"></p>
 <p>在弹出的页面中，将专用/来宾或公用/所有网络三个下拉中均设置为启用，所有网络中要选择无密码保护的共享，具体请参考下图，设置完成后，点击保存更改。至此计算机网络设置完成。<br><img src="https://img-blog.csdnimg.cn/4207f4d187c9470798f20bf987c46307.png#pic_center"><br><img src="https://img-blog.csdnimg.cn/e50699af8f2d4820806b990892eac3eb.png#pic_center"><br><img src="https://img-blog.csdnimg.cn/97309cf7d00240b8897eda584537be26.png#pic_center"></p>
-<h2 id="兼容问题解决-2"><a href="#兼容问题解决-2" class="headerlink" title="兼容问题解决[^2]"></a>兼容问题解决[^2]</h2><p>在扫描发送期间打印机会发出错误提醒，解决方法如下：<br>点击键盘上WIN按键（windows图标按键），直接打字搜索“控制面板”，选择控制面板。<br><img src="https://img-blog.csdnimg.cn/c89022f10b6d4128865450e08db3c66d.png#pic_center"><br>选择控制面板中程序，选择程序中启动或关闭Windows功能。<br><img src="https://img-blog.csdnimg.cn/86ffb83983b74e96911f53b24227a1b3.png#pic_center"><br><img src="https://img-blog.csdnimg.cn/c3c51b32b0794e4b8391488f1813056e.png#pic_center"><br>在功能中可以看到“.NET Framework 3.5(包括.NET 2.0 和 3.0)”与“SMB 1.0/CIFS文件共享支持”，分别将这两个文件左侧“+”图标点开，保证两个文件下属各项全部勾选，随后点击确定，确定之后需等待电脑将相应文件下载，下载完成后按照提示重启电脑。至此关于笔记本的设置就完成了。<br><img src="https://img-blog.csdnimg.cn/48427e661a2e4025809f33c03343ae8a.png#pic_center"><br>[^2]:<a href="https://jingyan.baidu.com/article/a24b33cdcf630419fe002b90.html">笔记本兼容参考</a></p>
+<h2 id="兼容问题解决"><a href="#兼容问题解决" class="headerlink" title="兼容问题解决"></a>兼容问题解决</h2><p><a href="https://jingyan.baidu.com/article/a24b33cdcf630419fe002b90.html">笔记本兼容参考</a><br>在扫描发送期间打印机会发出错误提醒，解决方法如下：<br>点击键盘上WIN按键（windows图标按键），直接打字搜索“控制面板”，选择控制面板。<br><img src="https://img-blog.csdnimg.cn/c89022f10b6d4128865450e08db3c66d.png#pic_center"><br>选择控制面板中程序，选择程序中启动或关闭Windows功能。<br><img src="https://img-blog.csdnimg.cn/86ffb83983b74e96911f53b24227a1b3.png#pic_center"><br><img src="https://img-blog.csdnimg.cn/c3c51b32b0794e4b8391488f1813056e.png#pic_center"><br>在功能中可以看到“.NET Framework 3.5(包括.NET 2.0 和 3.0)”与“SMB 1.0/CIFS文件共享支持”，分别将这两个文件左侧“+”图标点开，保证两个文件下属各项全部勾选，随后点击确定，确定之后需等待电脑将相应文件下载，下载完成后按照提示重启电脑。至此关于笔记本的设置就完成了。<br><img src="https://img-blog.csdnimg.cn/48427e661a2e4025809f33c03343ae8a.png#pic_center"></p>
 <h1 id="打印机设置"><a href="#打印机设置" class="headerlink" title="打印机设置"></a>打印机设置</h1><p>在笔记本上完成设置后，需在打印机上设置对于此台笔记本相应的目的地。步骤如下：</p>
 <ol>
 <li>在笔记本上打开浏览器，输入打印机IP地址，登录管理员账号，输入管理员密码（默认密码为：12345678）进入管理员界面，点击目的地注册。<br><img src="https://img-blog.csdnimg.cn/c494bf2447a4426a9948959c35d13e69.png#pic_center"></li>
