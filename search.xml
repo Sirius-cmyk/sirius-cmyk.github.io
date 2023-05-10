@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux 防火墙命令</title>
+    <url>/2023/04/21/firewall/</url>
+    <content><![CDATA[<p>查看防火墙状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+
+<p>防火墙添加端口</p>
+<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<p>重启防火墙（重启载入，更新配置）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>查询某个端口是否开放</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
+
+<p>查询已经开放的端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
+
+<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux命令</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux Shell命令</title>
     <url>/2023/04/21/Shell/</url>
     <content><![CDATA[<p>查看IP地址</p>
@@ -105,27 +136,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux 防火墙命令</title>
-    <url>/2023/04/21/firewall/</url>
-    <content><![CDATA[<p>查看防火墙状态</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+    <title>Nginx</title>
+    <url>/2023/04/21/nginx/</url>
+    <content><![CDATA[<p>Nginx是一个高性能的Http和反向代理服务器，处理高并发能力强，占用内存少 有以下3点作用 </p>
+<p>反向代理：   用户发请求给反向代理服务器，反向代理服务器发请求给真正的服务器，真正的服务器把数据返回给反向代理服务器，反向代理服务器再把数据返回给用户，代理的是服务端；   不使用反向代理，服务端的端口会暴露在客户端，用反向代理把真是地址隐藏起来保证安全性；  反向代理服务器接受请求，再用负载均衡将请求分布给多个服务器。能提高效率 </p>
+<p>负载均衡：将多个请求均匀的分布到多台服务器上，减轻每台服务器的压力，提高服务的吞吐量</p>
+<p>动静分离：可以用作静态文件的缓存服务器，动态页面和静态页面分别由不同的服务器解析，提高访问速度 </p>
+<p>正向代理：用户发送请求到自己的代理服务器，自己的代理服务器发送请求到服务器，服务器将数据返回到自己的代理服务器，自己的代理服务器再将数据返回给用户，代理的是客户端，把用户隐藏起来</p>
+<p>每次nginx.conf文件编辑后均需要执行 ./usr/local/nginx/sbin/nginx -s reload 进行nginx服务重启才可生效</p>
+<p>启动nginx失败时现杀死对应进程 kill -9 xxxx，之后即可启动服务</p>
+<p>在nginx启动时要配置相应模块，在解压文件中执行./configure时后面跟着对应模块。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module</span><br></pre></td></tr></table></figure>
 
-<p>防火墙添加端口</p>
-<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
+<h3 id="nginx-conf文件说明"><a href="#nginx-conf文件说明" class="headerlink" title="nginx.conf文件说明"></a>nginx.conf文件说明</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen       80 ssl; #监听端口，ssl为访问https时使用，http不用</span><br><span class="line">        server_name  localhost; #访问域名或ip</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location /hello/ &#123; #其中hello为xxx.xx/hello/</span><br><span class="line">            proxy_pass http://192.168.1.197:8000/; #跳转目标地址</span><br><span class="line">            #root   html; #显示文件所处位置</span><br><span class="line">            #index  index.html index.htm; #显示的文件</span><br><span class="line">        &#125;</span><br><span class="line">	#ssl_certificate	      /usr/local/nginx/ssl/9080124_www.joytrip.vip.pem; #ssl证书配置</span><br><span class="line">	#ssl_certificate_key   /usr/local/nginx/ssl/9080124_www.joytrip.vip.key; #ssl证书配置</span><br><span class="line">	location /wx/ &#123;</span><br><span class="line">	    proxy_pass https://www.joytrip.vip:30881/boy.png/;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
-<p>重启防火墙（重启载入，更新配置）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<p>端口访问前提时防火墙开放端口。firewall-cmd –list–all查看已开发端口</p>
+<p>重写（rewrite）与重定向（return）区别：共同作用是通知客户端请求的资源位于其他位置。目标链接均会显示在浏览器地址框。return比rewrite更方便，可以设置返回状态码；rewrite更全面，可以使用正则表达式但仅有临时与永久两种状态。</p>
+<h3 id="Nginx重定向配置"><a href="#Nginx重定向配置" class="headerlink" title="Nginx重定向配置"></a>Nginx重定向配置</h3><ul>
+<li>301永久重定向</li>
+<li>302临时重定向</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">		listen 		80;</span><br><span class="line">		#多域名重定向</span><br><span class="line">		server_name	joytrip.vip 4rg.cn;</span><br><span class="line">		return  302  https://$http_host$request_uri;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
-<p>查询某个端口是否开放</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
+<h3 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 反向代理配置</span><br><span class="line">upstream server_list&#123;</span><br><span class="line">	# 这个是tomcat的访问路径</span><br><span class="line">	server localhost:9001;</span><br><span class="line">	server localhost:9002;</span><br><span class="line">	server localhost:9003;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">	listen       30880;</span><br><span class="line">	server_name  localhost;</span><br><span class="line"></span><br><span class="line">	location / &#123;</span><br><span class="line">		proxy_pass http://server_list;</span><br><span class="line">		#反向代理一条链接时可选用下方方式跳转</span><br><span class="line">		#proxy_pass http://localhost:9001;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">    	root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>查询已经开放的端口</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
+<h3 id="Nginx重写"><a href="#Nginx重写" class="headerlink" title="Nginx重写"></a>Nginx重写</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">		listen 	80;</span><br><span class="line">		server_name  localhost;	</span><br><span class="line">		#rewrite ^ https://joytrip.vip/wx/boy.png;</span><br><span class="line">		rewrite ^ https://jytrp.com$request_uri;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
-
+<p>Nginx重启命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Linux命令</category>
@@ -133,6 +171,7 @@
       <tags>
         <tag>Linux</tag>
         <tag>学习</tag>
+        <tag>运维</tag>
       </tags>
   </entry>
   <entry>
@@ -188,45 +227,6 @@
       </categories>
       <tags>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nginx</title>
-    <url>/2023/04/21/nginx/</url>
-    <content><![CDATA[<p>Nginx是一个高性能的Http和反向代理服务器，处理高并发能力强，占用内存少 有以下3点作用 </p>
-<p>反向代理：   用户发请求给反向代理服务器，反向代理服务器发请求给真正的服务器，真正的服务器把数据返回给反向代理服务器，反向代理服务器再把数据返回给用户，代理的是服务端；   不使用反向代理，服务端的端口会暴露在客户端，用反向代理把真是地址隐藏起来保证安全性；  反向代理服务器接受请求，再用负载均衡将请求分布给多个服务器。能提高效率 </p>
-<p>负载均衡：将多个请求均匀的分布到多台服务器上，减轻每台服务器的压力，提高服务的吞吐量</p>
-<p>动静分离：可以用作静态文件的缓存服务器，动态页面和静态页面分别由不同的服务器解析，提高访问速度 </p>
-<p>正向代理：用户发送请求到自己的代理服务器，自己的代理服务器发送请求到服务器，服务器将数据返回到自己的代理服务器，自己的代理服务器再将数据返回给用户，代理的是客户端，把用户隐藏起来</p>
-<p>每次nginx.conf文件编辑后均需要执行 ./usr/local/nginx/sbin/nginx -s reload 进行nginx服务重启才可生效</p>
-<p>启动nginx失败时现杀死对应进程 kill -9 xxxx，之后即可启动服务</p>
-<p>在nginx启动时要配置相应模块，在解压文件中执行./configure时后面跟着对应模块。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module</span><br></pre></td></tr></table></figure>
-
-<h3 id="nginx-conf文件说明"><a href="#nginx-conf文件说明" class="headerlink" title="nginx.conf文件说明"></a>nginx.conf文件说明</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen       80 ssl; #监听端口，ssl为访问https时使用，http不用</span><br><span class="line">        server_name  localhost; #访问域名或ip</span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location /hello/ &#123; #其中hello为xxx.xx/hello/</span><br><span class="line">            proxy_pass http://192.168.1.197:8000/; #跳转目标地址</span><br><span class="line">            #root   html; #显示文件所处位置</span><br><span class="line">            #index  index.html index.htm; #显示的文件</span><br><span class="line">        &#125;</span><br><span class="line">	#ssl_certificate	      /usr/local/nginx/ssl/9080124_www.joytrip.vip.pem; #ssl证书配置</span><br><span class="line">	#ssl_certificate_key   /usr/local/nginx/ssl/9080124_www.joytrip.vip.key; #ssl证书配置</span><br><span class="line">	location /wx/ &#123;</span><br><span class="line">	    proxy_pass https://www.joytrip.vip:30881/boy.png/;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>端口访问前提时防火墙开放端口。firewall-cmd –list–all查看已开发端口</p>
-<p>重写（rewrite）与重定向（return）区别：共同作用是通知客户端请求的资源位于其他位置。目标链接均会显示在浏览器地址框。return比rewrite更方便，可以设置返回状态码；rewrite更全面，可以使用正则表达式但仅有临时与永久两种状态。</p>
-<h3 id="Nginx重定向配置"><a href="#Nginx重定向配置" class="headerlink" title="Nginx重定向配置"></a>Nginx重定向配置</h3><ul>
-<li>301永久重定向</li>
-<li>302临时重定向</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">		listen 		80;</span><br><span class="line">		#多域名重定向</span><br><span class="line">		server_name	joytrip.vip 4rg.cn;</span><br><span class="line">		return  302  https://$http_host$request_uri;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 反向代理配置</span><br><span class="line">upstream server_list&#123;</span><br><span class="line">	# 这个是tomcat的访问路径</span><br><span class="line">	server localhost:9001;</span><br><span class="line">	server localhost:9002;</span><br><span class="line">	server localhost:9003;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">	listen       30880;</span><br><span class="line">	server_name  localhost;</span><br><span class="line"></span><br><span class="line">	location / &#123;</span><br><span class="line">		proxy_pass http://server_list;</span><br><span class="line">		#反向代理一条链接时可选用下方方式跳转</span><br><span class="line">		#proxy_pass http://localhost:9001;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page   500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">    	root   html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Nginx重写"><a href="#Nginx重写" class="headerlink" title="Nginx重写"></a>Nginx重写</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">		listen 	80;</span><br><span class="line">		server_name  localhost;	</span><br><span class="line">		#rewrite ^ https://joytrip.vip/wx/boy.png;</span><br><span class="line">		rewrite ^ https://jytrp.com$request_uri;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>Nginx重启命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Linux命令</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>学习</tag>
-        <tag>运维</tag>
       </tags>
   </entry>
   <entry>
