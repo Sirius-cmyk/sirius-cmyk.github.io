@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Linux 防火墙命令</title>
-    <url>/2023/04/21/firewall/</url>
-    <content><![CDATA[<p>查看防火墙状态</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
-
-<p>防火墙添加端口</p>
-<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
-
-<p>重启防火墙（重启载入，更新配置）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<p>查询某个端口是否开放</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
-
-<p>查询已经开放的端口</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
-
-<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux命令</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux Shell命令</title>
     <url>/2023/04/21/Shell/</url>
     <content><![CDATA[<p>查看IP地址</p>
@@ -175,6 +144,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux 防火墙命令</title>
+    <url>/2023/04/21/firewall/</url>
+    <content><![CDATA[<p>查看防火墙状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+
+<p>防火墙添加端口</p>
+<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<p>重启防火墙（重启载入，更新配置）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>查询某个端口是否开放</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
+
+<p>查询已经开放的端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
+
+<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux命令</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>软件工具</title>
     <url>/2023/04/25/softwareTool/</url>
     <content><![CDATA[<h5 id="压缩软件："><a href="#压缩软件：" class="headerlink" title="压缩软件："></a>压缩软件：</h5><ul>
@@ -230,6 +230,24 @@
       </tags>
   </entry>
   <entry>
+    <title>兼职注意事项</title>
+    <url>/2023/05/10/%E5%85%BC%E8%81%8C%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    <content><![CDATA[<p>##什么样的私活不能接</p>
+<p>1、没有第三方担保的个人对个人的尽量不要接，双方都没保障，出了问题很大的可能撕破脸皮不了了之。</p>
+<p>2、一上来就直接说给我开发一个什么软件，不说具体需求，没有需求文档的都不靠谱，这样的项目不要接。</p>
+<p>3、尽量442收费方式，即开工收40%项目款，项目中期收40%项目款，项目结束收20%项目款。一开始不给钱的，尽量不要接，这一点一定要记住，否则很容易付出了劳动得不到应得的收入。</p>
+<p>不给完钱，不交完整代码。你的成果就是代码，如果没给完钱，就把代码交给了对方，也容易被坑到。</p>
+]]></content>
+      <categories>
+        <category>经验分享</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+        <tag>兼职</tag>
+        <tag>经验</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>笔记本电脑获取柯尼卡美能达 Bizhub C221 打印机扫描文件</title>
     <url>/2023/05/10/%E7%AC%94%E8%AE%B0%E6%9C%AC%E8%BF%9E%E6%8E%A5%E5%B9%B6%E8%8E%B7%E5%8F%96_Bizhub_C221_%E6%89%AB%E6%8F%8F%E4%BB%B6/</url>
     <content><![CDATA[<p>文章原本内容可跳转至<a href="https://blog.csdn.net/SUUFBK/article/details/124467147?spm=1001.2014.3001.5501">此文章</a>，本章节仅为内容复用。</p>
@@ -254,7 +272,14 @@
       </categories>
       <tags>
         <tag>运维</tag>
+        <tag>经验</tag>
         <tag>办公</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>租房注意事项</title>
+    <url>/2023/05/10/%E7%A7%9F%E6%88%BF%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    <content><![CDATA[<p>租费（季付/年付）<br>电费（民电/商电）<br>水费<br>供暖费<br>物业费<br>费用缴费方式<br>房屋朝向（南/西）<br>房屋大小<br>房屋位置<br>通勤时间<br>合租人数</p>
+]]></content>
   </entry>
 </search>
