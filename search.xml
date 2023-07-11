@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>软件工具</title>
+    <url>/2023/04/25/softwareTool/</url>
+    <content><![CDATA[<h5 id="压缩软件："><a href="#压缩软件：" class="headerlink" title="压缩软件："></a>压缩软件：</h5><ul>
+<li>7-zip</li>
+</ul>
+<h5 id="视频格式转换器："><a href="#视频格式转换器：" class="headerlink" title="视频格式转换器："></a>视频格式转换器：</h5><ul>
+<li>狸窝全能视频转换器</li>
+</ul>
+<h5 id="录屏软件："><a href="#录屏软件：" class="headerlink" title="录屏软件："></a>录屏软件：</h5><ul>
+<li>OBS Studio：专业主播录屏软件</li>
+</ul>
+<h5 id="PDF编辑软件："><a href="#PDF编辑软件：" class="headerlink" title="PDF编辑软件："></a>PDF编辑软件：</h5><ul>
+<li>Adobe Acrobat DC </li>
+<li>office lens：手机使用软件</li>
+</ul>
+<h5 id="安全软件："><a href="#安全软件：" class="headerlink" title="安全软件："></a>安全软件：</h5><ul>
+<li>火绒</li>
+<li>电脑管家</li>
+</ul>
+<h5 id="服务器文件管理软件："><a href="#服务器文件管理软件：" class="headerlink" title="服务器文件管理软件："></a>服务器文件管理软件：</h5><ul>
+<li>WinSCP：连接服务器后可视化上传文件</li>
+</ul>
+<h5 id="服务器shell命令软件："><a href="#服务器shell命令软件：" class="headerlink" title="服务器shell命令软件："></a>服务器shell命令软件：</h5><ul>
+<li>Xshell</li>
+</ul>
+<h5 id="文本编辑器："><a href="#文本编辑器：" class="headerlink" title="文本编辑器："></a>文本编辑器：</h5><ul>
+<li>Typore：makedown文件编辑器</li>
+<li>Notepad++：可列选择</li>
+</ul>
+<h5 id="3D画图软件："><a href="#3D画图软件：" class="headerlink" title="3D画图软件："></a>3D画图软件：</h5><ul>
+<li>FreeCAD</li>
+</ul>
+<h5 id="翻墙软件："><a href="#翻墙软件：" class="headerlink" title="翻墙软件："></a>翻墙软件：</h5><ul>
+<li><a href="https://www.astrill.com/">Astrill</a></li>
+<li><a href="https://github.com/getlantern">蓝灯</a></li>
+</ul>
+<h5 id="音频处理软件："><a href="#音频处理软件：" class="headerlink" title="音频处理软件："></a>音频处理软件：</h5><ul>
+<li><a href="https://ffmpeg.org/">FFmpeg</a></li>
+</ul>
+<h5 id="思维导图软件："><a href="#思维导图软件：" class="headerlink" title="思维导图软件："></a>思维导图软件：</h5><ul>
+<li><a href="https://xmind.cn/">Xmind</a></li>
+</ul>
+<h5 id="modbus-TCP-UDP协议解析软件："><a href="#modbus-TCP-UDP协议解析软件：" class="headerlink" title="modbus TCP/UDP协议解析软件："></a>modbus TCP/UDP协议解析软件：</h5><ul>
+<li>MODBUS Poll</li>
+<li>MODBUS slave</li>
+</ul>
+]]></content>
+      <categories>
+        <category>软件工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux Shell命令</title>
     <url>/2023/05/28/Shell/</url>
     <content><![CDATA[<p>查看IP地址</p>
@@ -78,6 +133,33 @@
       </tags>
   </entry>
   <entry>
+    <title>GIT命令</title>
+    <url>/2023/05/28/git/</url>
+    <content><![CDATA[<p>克隆仓库会在执行命令文件夹下新建仓库文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:用户名/仓库名.git</span><br></pre></td></tr></table></figure>
+
+<p>仓库提交命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;操作目的&quot;</span><br><span class="line">git push origin（本地分支） 仓库分支</span><br></pre></td></tr></table></figure>
+
+<p>仓库ssh生成命令，生成后在c/Usr/用户名/.ssh/id_rsa.pub文件中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen –t rsa –C &quot;git仓库邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>配置仓库本地用户名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;git用户名&quot;</span><br></pre></td></tr></table></figure>
+
+<p>配置仓库本地邮箱</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;git登录邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>git命令</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>数仓</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux 防火墙命令</title>
     <url>/2023/05/28/firewall/</url>
     <content><![CDATA[<p>查看防火墙状态</p>
@@ -106,33 +188,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GIT命令</title>
-    <url>/2023/05/28/git/</url>
-    <content><![CDATA[<p>克隆仓库会在执行命令文件夹下新建仓库文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@gitee.com:用户名/仓库名.git</span><br></pre></td></tr></table></figure>
-
-<p>仓库提交命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;操作目的&quot;</span><br><span class="line">git push origin（本地分支） 仓库分支</span><br></pre></td></tr></table></figure>
-
-<p>仓库ssh生成命令，生成后在c/Usr/用户名/.ssh/id_rsa.pub文件中</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen –t rsa –C &quot;git仓库邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-<p>配置仓库本地用户名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;git用户名&quot;</span><br></pre></td></tr></table></figure>
-
-<p>配置仓库本地邮箱</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;git登录邮箱&quot;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>git命令</category>
-      </categories>
-      <tags>
-        <tag>学习</tag>
-        <tag>数仓</tag>
       </tags>
   </entry>
   <entry>
@@ -175,59 +230,10 @@
       </tags>
   </entry>
   <entry>
-    <title>软件工具</title>
-    <url>/2023/04/25/softwareTool/</url>
-    <content><![CDATA[<h5 id="压缩软件："><a href="#压缩软件：" class="headerlink" title="压缩软件："></a>压缩软件：</h5><ul>
-<li>7-zip</li>
-</ul>
-<h5 id="视频格式转换器："><a href="#视频格式转换器：" class="headerlink" title="视频格式转换器："></a>视频格式转换器：</h5><ul>
-<li>狸窝全能视频转换器</li>
-</ul>
-<h5 id="录屏软件："><a href="#录屏软件：" class="headerlink" title="录屏软件："></a>录屏软件：</h5><ul>
-<li>OBS Studio：专业主播录屏软件</li>
-</ul>
-<h5 id="PDF编辑软件："><a href="#PDF编辑软件：" class="headerlink" title="PDF编辑软件："></a>PDF编辑软件：</h5><ul>
-<li>Adobe Acrobat DC </li>
-<li>office lens：手机使用软件</li>
-</ul>
-<h5 id="安全软件："><a href="#安全软件：" class="headerlink" title="安全软件："></a>安全软件：</h5><ul>
-<li>火绒</li>
-<li>电脑管家</li>
-</ul>
-<h5 id="服务器文件管理软件："><a href="#服务器文件管理软件：" class="headerlink" title="服务器文件管理软件："></a>服务器文件管理软件：</h5><ul>
-<li>WinSCP：连接服务器后可视化上传文件</li>
-</ul>
-<h5 id="服务器shell命令软件："><a href="#服务器shell命令软件：" class="headerlink" title="服务器shell命令软件："></a>服务器shell命令软件：</h5><ul>
-<li>Xshell</li>
-</ul>
-<h5 id="文本编辑器："><a href="#文本编辑器：" class="headerlink" title="文本编辑器："></a>文本编辑器：</h5><ul>
-<li>Typore：makedown文件编辑器</li>
-<li>Notepad++：可列选择</li>
-</ul>
-<h5 id="3D画图软件："><a href="#3D画图软件：" class="headerlink" title="3D画图软件："></a>3D画图软件：</h5><ul>
-<li>FreeCAD</li>
-</ul>
-<h5 id="翻墙软件："><a href="#翻墙软件：" class="headerlink" title="翻墙软件："></a>翻墙软件：</h5><ul>
-<li><a href="https://www.astrill.com/">Astrill</a></li>
-<li><a href="https://github.com/getlantern">蓝灯</a></li>
-</ul>
-<h5 id="音频处理软件："><a href="#音频处理软件：" class="headerlink" title="音频处理软件："></a>音频处理软件：</h5><ul>
-<li><a href="https://ffmpeg.org/">FFmpeg</a></li>
-</ul>
-<h5 id="思维导图软件："><a href="#思维导图软件：" class="headerlink" title="思维导图软件："></a>思维导图软件：</h5><ul>
-<li><a href="https://xmind.cn/">Xmind</a></li>
-</ul>
-<h5 id="modbus-TCP-UDP协议解析软件："><a href="#modbus-TCP-UDP协议解析软件：" class="headerlink" title="modbus TCP/UDP协议解析软件："></a>modbus TCP/UDP协议解析软件：</h5><ul>
-<li>MODBUS Poll</li>
-<li>MODBUS slave</li>
-</ul>
+    <title>租房注意事项</title>
+    <url>/2023/05/10/%E7%A7%9F%E6%88%BF%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    <content><![CDATA[<p>租费（季付/年付）<br>电费（民电/商电）<br>水费<br>供暖费<br>物业费<br>费用缴费方式<br>房屋朝向（南/西）<br>房屋大小<br>房屋位置<br>通勤时间<br>合租人数</p>
 ]]></content>
-      <categories>
-        <category>软件工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
   </entry>
   <entry>
     <title>兼职注意事项</title>
@@ -246,12 +252,6 @@
         <tag>兼职</tag>
         <tag>经验</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>租房注意事项</title>
-    <url>/2023/05/10/%E7%A7%9F%E6%88%BF%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
-    <content><![CDATA[<p>租费（季付/年付）<br>电费（民电/商电）<br>水费<br>供暖费<br>物业费<br>费用缴费方式<br>房屋朝向（南/西）<br>房屋大小<br>房屋位置<br>通勤时间<br>合租人数</p>
-]]></content>
   </entry>
   <entry>
     <title>笔记本电脑获取柯尼卡美能达 Bizhub C221 打印机扫描文件</title>
