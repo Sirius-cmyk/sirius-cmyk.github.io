@@ -1,61 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>软件工具</title>
-    <url>/2023/04/25/softwareTool/</url>
-    <content><![CDATA[<h5 id="压缩软件："><a href="#压缩软件：" class="headerlink" title="压缩软件："></a>压缩软件：</h5><ul>
-<li>7-zip</li>
-</ul>
-<h5 id="视频格式转换器："><a href="#视频格式转换器：" class="headerlink" title="视频格式转换器："></a>视频格式转换器：</h5><ul>
-<li>狸窝全能视频转换器</li>
-</ul>
-<h5 id="录屏软件："><a href="#录屏软件：" class="headerlink" title="录屏软件："></a>录屏软件：</h5><ul>
-<li>OBS Studio：专业主播录屏软件</li>
-</ul>
-<h5 id="PDF编辑软件："><a href="#PDF编辑软件：" class="headerlink" title="PDF编辑软件："></a>PDF编辑软件：</h5><ul>
-<li>Adobe Acrobat DC </li>
-<li>office lens：手机使用软件</li>
-</ul>
-<h5 id="安全软件："><a href="#安全软件：" class="headerlink" title="安全软件："></a>安全软件：</h5><ul>
-<li>火绒</li>
-<li>电脑管家</li>
-</ul>
-<h5 id="服务器文件管理软件："><a href="#服务器文件管理软件：" class="headerlink" title="服务器文件管理软件："></a>服务器文件管理软件：</h5><ul>
-<li>WinSCP：连接服务器后可视化上传文件</li>
-</ul>
-<h5 id="服务器shell命令软件："><a href="#服务器shell命令软件：" class="headerlink" title="服务器shell命令软件："></a>服务器shell命令软件：</h5><ul>
-<li>Xshell</li>
-</ul>
-<h5 id="文本编辑器："><a href="#文本编辑器：" class="headerlink" title="文本编辑器："></a>文本编辑器：</h5><ul>
-<li>Typore：makedown文件编辑器</li>
-<li>Notepad++：可列选择</li>
-</ul>
-<h5 id="3D画图软件："><a href="#3D画图软件：" class="headerlink" title="3D画图软件："></a>3D画图软件：</h5><ul>
-<li>FreeCAD</li>
-</ul>
-<h5 id="翻墙软件："><a href="#翻墙软件：" class="headerlink" title="翻墙软件："></a>翻墙软件：</h5><ul>
-<li><a href="https://www.astrill.com/">Astrill</a></li>
-<li><a href="https://github.com/getlantern">蓝灯</a></li>
-</ul>
-<h5 id="音频处理软件："><a href="#音频处理软件：" class="headerlink" title="音频处理软件："></a>音频处理软件：</h5><ul>
-<li><a href="https://ffmpeg.org/">FFmpeg</a></li>
-</ul>
-<h5 id="思维导图软件："><a href="#思维导图软件：" class="headerlink" title="思维导图软件："></a>思维导图软件：</h5><ul>
-<li><a href="https://xmind.cn/">Xmind</a></li>
-</ul>
-<h5 id="modbus-TCP-UDP协议解析软件："><a href="#modbus-TCP-UDP协议解析软件：" class="headerlink" title="modbus TCP/UDP协议解析软件："></a>modbus TCP/UDP协议解析软件：</h5><ul>
-<li>MODBUS Poll</li>
-<li>MODBUS slave</li>
-</ul>
-]]></content>
-      <categories>
-        <category>软件工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux Shell命令</title>
     <url>/2023/05/28/Shell/</url>
     <content><![CDATA[<p>查看IP地址</p>
@@ -160,37 +105,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux 防火墙命令</title>
-    <url>/2023/05/28/firewall/</url>
-    <content><![CDATA[<p>查看防火墙状态</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
-
-<p>防火墙添加端口</p>
-<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
-
-<p>重启防火墙（重启载入，更新配置）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<p>查询某个端口是否开放</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
-
-<p>查询已经开放的端口</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
-
-<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux命令</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Nginx</title>
     <url>/2023/05/28/nginx/</url>
     <content><![CDATA[<p>Nginx是一个高性能的Http和反向代理服务器，处理高并发能力强，占用内存少 有以下3点作用 </p>
@@ -230,10 +144,93 @@
       </tags>
   </entry>
   <entry>
-    <title>租房注意事项</title>
-    <url>/2023/05/10/%E7%A7%9F%E6%88%BF%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
-    <content><![CDATA[<p>租费（季付/年付）<br>电费（民电/商电）<br>水费<br>供暖费<br>物业费<br>费用缴费方式<br>房屋朝向（南/西）<br>房屋大小<br>房屋位置<br>通勤时间<br>合租人数</p>
+    <title>Linux 防火墙命令</title>
+    <url>/2023/05/28/firewall/</url>
+    <content><![CDATA[<p>查看防火墙状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+
+<p>防火墙添加端口</p>
+<p>–permanent为永久开启，不加服务器重启失效。也可以是一个端口范围1000-2000</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=8000/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<p>重启防火墙（重启载入，更新配置）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>查询某个端口是否开放</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8000/tcp</span><br></pre></td></tr></table></figure>
+
+<p>查询已经开放的端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
+
+<p>只允许192.168.1.147访问8000端口，删除则将add改为remove即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule=&quot;rule family=&quot;ipv4&quot; source address=&quot;192.168.1.147&quot; port protocol=&quot;tcp&quot; port=&quot;8000&quot; accept&quot;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
+      <categories>
+        <category>Linux命令</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件工具</title>
+    <url>/2023/04/25/softwareTool/</url>
+    <content><![CDATA[<h5 id="压缩软件："><a href="#压缩软件：" class="headerlink" title="压缩软件："></a>压缩软件：</h5><ul>
+<li>7-zip</li>
+</ul>
+<h5 id="视频格式转换器："><a href="#视频格式转换器：" class="headerlink" title="视频格式转换器："></a>视频格式转换器：</h5><ul>
+<li>狸窝全能视频转换器</li>
+</ul>
+<h5 id="录屏软件："><a href="#录屏软件：" class="headerlink" title="录屏软件："></a>录屏软件：</h5><ul>
+<li>OBS Studio：专业主播录屏软件</li>
+</ul>
+<h5 id="PDF编辑软件："><a href="#PDF编辑软件：" class="headerlink" title="PDF编辑软件："></a>PDF编辑软件：</h5><ul>
+<li>Adobe Acrobat DC </li>
+<li>office lens：手机使用软件</li>
+</ul>
+<h5 id="安全软件："><a href="#安全软件：" class="headerlink" title="安全软件："></a>安全软件：</h5><ul>
+<li>火绒</li>
+<li>电脑管家</li>
+</ul>
+<h5 id="服务器文件管理软件："><a href="#服务器文件管理软件：" class="headerlink" title="服务器文件管理软件："></a>服务器文件管理软件：</h5><ul>
+<li>WinSCP：连接服务器后可视化上传文件</li>
+</ul>
+<h5 id="服务器shell命令软件："><a href="#服务器shell命令软件：" class="headerlink" title="服务器shell命令软件："></a>服务器shell命令软件：</h5><ul>
+<li>Xshell</li>
+</ul>
+<h5 id="文本编辑器："><a href="#文本编辑器：" class="headerlink" title="文本编辑器："></a>文本编辑器：</h5><ul>
+<li>Typore：makedown文件编辑器</li>
+<li>Notepad++：可列选择</li>
+</ul>
+<h5 id="3D画图软件："><a href="#3D画图软件：" class="headerlink" title="3D画图软件："></a>3D画图软件：</h5><ul>
+<li>FreeCAD</li>
+</ul>
+<h5 id="翻墙软件："><a href="#翻墙软件：" class="headerlink" title="翻墙软件："></a>翻墙软件：</h5><ul>
+<li><a href="https://www.astrill.com/">Astrill</a></li>
+<li><a href="https://github.com/getlantern">蓝灯</a></li>
+</ul>
+<h5 id="音频处理软件："><a href="#音频处理软件：" class="headerlink" title="音频处理软件："></a>音频处理软件：</h5><ul>
+<li><a href="https://ffmpeg.org/">FFmpeg</a></li>
+</ul>
+<h5 id="多媒体解析软件："><a href="#多媒体解析软件：" class="headerlink" title="多媒体解析软件："></a>多媒体解析软件：</h5><ul>
+<li><a href="https://www.videolan.org/vlc/index.zh_CN.html">VLC</a></li>
+</ul>
+<h5 id="思维导图软件："><a href="#思维导图软件：" class="headerlink" title="思维导图软件："></a>思维导图软件：</h5><ul>
+<li><a href="https://xmind.cn/">Xmind</a></li>
+</ul>
+<h5 id="modbus-TCP-UDP协议解析软件："><a href="#modbus-TCP-UDP协议解析软件：" class="headerlink" title="modbus TCP/UDP协议解析软件："></a>modbus TCP/UDP协议解析软件：</h5><ul>
+<li>MODBUS Poll</li>
+<li>MODBUS slave</li>
+</ul>
+]]></content>
+      <categories>
+        <category>软件工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
   </entry>
   <entry>
     <title>兼职注意事项</title>
@@ -281,5 +278,11 @@
         <tag>经验</tag>
         <tag>办公</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>租房注意事项</title>
+    <url>/2023/05/10/%E7%A7%9F%E6%88%BF%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    <content><![CDATA[<p>租费（季付/年付）<br>电费（民电/商电）<br>水费<br>供暖费<br>物业费<br>费用缴费方式<br>房屋朝向（南/西）<br>房屋大小<br>房屋位置<br>通勤时间<br>合租人数</p>
+]]></content>
   </entry>
 </search>
